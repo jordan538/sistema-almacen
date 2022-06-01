@@ -19,7 +19,10 @@ public class control extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         int op=Integer.parseInt(request.getParameter("opc"));
         if(op==1)ListarProductos(request, response);
-        if(op==3)DelClientes(request, response);
+        if(op==2)ConsulProducto(request, response);
+        if(op==3)DelProductos(request, response);
+        if(op==4)AgrProductos(request, response);
+        if(op==5)ModProducto(request, response);
     }
     
     protected void ListarProductos(HttpServletRequest request, HttpServletResponse response)
@@ -31,7 +34,39 @@ public class control extends HttpServlet {
         out.print(gson.toJson(obj.ListaProductosFiltro(termino)));
     }
     
-    protected void DelClientes(HttpServletRequest request, HttpServletResponse response)
+    protected void AgrProductos(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        Productos p = new Productos();
+        //p.setCodProd(Integer.parseInt(request.getParameter("cod_prod")));
+        p.setDesProd(request.getParameter("nom_prod"));
+        p.setStockProd(Integer.parseInt(request.getParameter("stock_prod")));
+        p.setUmProd(request.getParameter("pro"));
+        p.setFecProd(request.getParameter("date_prod"));
+        obj.AgregarProducto(p);
+        String pag = "/pagProductos.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);
+    }
+    
+    protected void ConsulProducto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int nro=Integer.parseInt(request.getParameter("cod"));
+        Productos pre=obj.ConsultaProducto(nro);
+        request.setAttribute("dato", pre);
+        String pag="/modProductos.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);
+    }
+    
+    protected void ModProducto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Productos p=new Productos();
+        p.setDesProd(request.getParameter("nom_prod"));
+        p.setStockProd(Integer.parseInt(request.getParameter("stock_prod")));
+        p.setUmProd(request.getParameter("pro"));
+        p.setFecProd(request.getParameter("date_prod"));
+        obj.ModificaProducto(p);
+        String pag="/pagProductos.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);
+    }
+    
+    protected void DelProductos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         int codPro=Integer.parseInt(request.getParameter("cod"));

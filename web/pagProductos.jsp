@@ -14,7 +14,7 @@
     </head>
     <body>
         <%
-            /*Negocio obj=new Negocio();*/
+            
         %>
         <header>
         <nav>
@@ -51,6 +51,9 @@
             </div>
             <div class="col-lg-3 row-content">
                 <div class="content-box">
+                    <div class="back">
+                        <button type="submit" class="btn btn-primary backing upload" onclick="location.href='/Sistema_Web/addProductos.jsp'"><i class="fa fa-file-arrow-up"></i> Añadir Producto</button>
+                    </div>
                     <div class="searchform-fields">
                         <input id="txtnom" name="txtnom" placeholder="Busque producto...">
                         <span class="button-wrap">

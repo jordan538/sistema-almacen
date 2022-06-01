@@ -459,3 +459,9 @@ nav .nav-list .nav-link:after {
     content: "\f05e";
     background: #da5350;
 }
+.fa-file-arrow-up:before {
+    content: "\f574";
+}
+button.btn.btn-primary.backing.upload {
+    padding: 10px 1rem;
+}
