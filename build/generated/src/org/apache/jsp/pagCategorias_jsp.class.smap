@@ -1,0 +1,20 @@
+SMAP
+pagCategorias_jsp.java
+JSP
+*S JSP
+*F
++ 0 pagCategorias.jsp
+pagCategorias.jsp
++ 1 cabecera.jsp
+include/cabecera.jsp
++ 2 menu.jsp
+include/menu.jsp
+*L
+1,16:56
+1#1,37:72
+16#0,3:108
+1#2,18:111
+19,2:129,3
+21,10:135
+18#0,60:144
+*E

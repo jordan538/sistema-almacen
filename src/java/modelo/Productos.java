@@ -1,7 +1,7 @@
 package modelo;
 
 public class Productos {
-    private int codProd;
+    private String codProd;
     private String desProd;
     private int stockProd;
     private String umProd;
@@ -10,7 +10,7 @@ public class Productos {
     public Productos() {
     }
 
-    public Productos(int codProd, String desProd, int stockProd, String umProd, String fecProd) {
+    public Productos(String codProd, String desProd, int stockProd, String umProd, String fecProd) {
         this.codProd = codProd;
         this.desProd = desProd;
         this.stockProd = stockProd;
@@ -18,11 +18,11 @@ public class Productos {
         this.fecProd = fecProd;
     }
 
-    public int getCodProd() {
+    public String getCodProd() {
         return codProd;
     }
 
-    public void setCodProd(int codProd) {
+    public void setCodProd(String codProd) {
         this.codProd = codProd;
     }
 
@@ -56,8 +56,6 @@ public class Productos {
 
     public void setFecProd(String fecProd) {
         this.fecProd = fecProd;
-    }
-
-    
+    } 
     
 }

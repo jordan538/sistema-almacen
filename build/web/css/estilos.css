@@ -2,6 +2,10 @@ body {
     margin: 0;
     overflow: hidden;
 }
+header {
+    z-index: 999;
+    position: relative;
+}
 .fab {
     font-family: "Font Awesome 5 Brands";
 }
@@ -57,7 +61,7 @@ nav .nav-list .nav-logo .logo {
     cursor: pointer;
     transition: color 0.2s;
     background: #367fa9;
-    width: 250px;
+    width: 235px;
     height: 85px;
     padding: 1rem;
 }
@@ -81,7 +85,7 @@ nav .nav-list .nav-link {
     flex-shrink: 0;
     flex-grow: 0;
     font-weight: bold;
-    padding: 1.5rem 1.8rem;
+    padding: 1rem 1.8rem;
     position: relative;
     cursor: pointer;
     color: #fff;
@@ -133,7 +137,7 @@ nav .nav-list .nav-link:after {
     transition: transform 0.3s;
 }
 /*BODY*/
-.sidebar-animated{
+/*.sidebar-animated{
     transition: width .3s ease-in; 
 }
 .sidebar-minified .left-sidebar {
@@ -146,28 +150,17 @@ nav .nav-list .nav-link:after {
     background-color: #1a2226;
     height: 100vh;
     width: 75px;
-}
+}*/
+/***********/
 /*NAV-MENU*/
-.sidebar {
-    position: relative;
-    top: auto;
-    width: auto;
-}
-.sidebar-initial .sidebar {
-    display: none;
-}
-.sidebar-initial.sidebar-minified-out .sidebar {
-    display: initial;
-    top: 90px;
-}
-.sidebar ul {
+nav.menu-sidebar ul {
     padding: 0;
 }
-.sidebar ul li {
+nav.menu-sidebar ul li {
     line-height: 1;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.sidebar ul li a {
+nav.menu-sidebar ul li a {
     position: relative;
     color: #fff;
     text-decoration: none;
@@ -177,7 +170,7 @@ nav .nav-list .nav-link:after {
     width: 100%;
     padding: 1rem 1rem;
 }
-.sidebar ul li a:hover {
+nav.menu-sidebar ul li a:hover {
     transition: 0.2s;
     background: #2c3b41;
     border-left: 3px solid #367fa9;
@@ -464,4 +457,84 @@ nav .nav-list .nav-link:after {
 }
 button.btn.btn-primary.backing.upload {
     padding: 10px 1rem;
+}
+/*SIDEBAR-MENU-2.0*/
+.btn span {
+    color: white;
+    font-size: 25px;
+    line-height: 35px;
+}
+.btn.click span:before {
+    content: '\f00d';
+}
+.animated {
+    transition: left 0.4s ease;
+}
+.sidebar {
+    position: relative;
+    width: 250px;
+    height: 100vh;
+    left: 0;
+    background: #1b1b1b;
+    transition: width .3s ease-in;
+}
+.sidebar.show {
+    background: #212529;
+    width: 90px;
+    height: 100vh;
+    left: 0px;
+}
+nav.menu-sidebar {
+    margin-top: 6rem;
+    position: relative;
+    width: auto;
+    height: 100vh;
+    left: 0;
+    background: #1b1b1b;
+}
+.sidebar.show .menu-sidebar {
+    display: none;
+}
+.col-lg-9.sidebar {
+    flex: 0 0 auto;
+    max-width: initial;
+}
+.col-lg-9.sidebar.show {
+    flex: 0 0 auto;
+    max-width: initial;
+}
+.close-menu {
+    
+}
+.sidebar .close-menu {
+    display: none;
+}
+.sidebar.show .close-menu {
+    display: initial;
+    position: relative;
+    color: white;
+    font-size: 3rem;
+    top: 50%;
+    bottom: 50%;
+    margin-left: 1.5rem;
+}
+/*MENU-ACTIVE*/
+nav.menu-sidebar ul li.active {
+    background: #2c3b42;
+}
+nav.menu-sidebar ul li.active a {
+    color: #3c8dbc;
+}
+/*EMPLEADO*/
+.empleado .col-lg-2 {
+    flex: 0 0 auto;
+    width: 14.28%;
+}
+.empleado td {
+    flex: 0 0 auto;
+    width: 14.28%;
+}
+.categorias td {
+    flex: 0 0 auto;
+    width: 33.3%;
 }

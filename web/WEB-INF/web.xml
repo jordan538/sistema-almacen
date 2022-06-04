@@ -4,9 +4,25 @@
         <servlet-name>control</servlet-name>
         <servlet-class>miservlet.control</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controlEmp</servlet-name>
+        <servlet-class>miservlet.controlEmp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>controlCat</servlet-name>
+        <servlet-class>miservlet.controlCat</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>control</servlet-name>
         <url-pattern>/control</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlEmp</servlet-name>
+        <url-pattern>/controlEmp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlCat</servlet-name>
+        <url-pattern>/controlCat</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

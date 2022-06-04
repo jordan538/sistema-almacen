@@ -10,49 +10,16 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
-        <script src="js/anima.js"></script> 
+        <script src="js/animaciones.js"></script> 
     </head>
     <body>
-        <%
-            
-        %>
-        <header>
-        <nav>
-            <div class="container">
-                <ul class="nav-list">
-                    <li class="nav-logo">
-                        <div class="logo">
-                        <i class="fab fa-sass"></i>
-                        </div>
-                    </li>     
-                    <li class="nav-link">Sistema de Almacen - <a>Admin</a>
-                    </li>   
-                    <li class="nav-link">
-                        <button id="sidebar-toggler" class="sidebar-toggle btn">
-                        <i class="fa fa-bars"></i>
-                        </button>
-                    </li> 
-                </ul>
-            </div>
-        </nav>
-        </header>
+        <%@include file="include/cabecera.jsp" %>
         <div id="body" class="sidebar-initial row">
-            <div class="left-sidebar sidebar-animated col-lg-9">
-            <nav class="sidebar">
-                <ul>
-                <li><a href="#" class=""><i class="fa fa-layer-group"></i> Escritorio</a></li>
-                <li><a href="#" class=""><i class="fa fa-pen-to-square"></i> Almacen</a></li>
-                <li><a href="#" class=""><i class="fa fa-users"></i> Empleados</a></li>
-                <li><a href="#" class=""><i class="fa fa-location-dot"></i> Localización</a></li>
-                <li><a href="#" class=""><i class="fa fa-cart-flatbed"></i> Orden</a></li>
-                <li><a href="#" class="nav-item-bottom" id="logoutbtn" onclick="logoutcomfirm()"><i class="fa fa-xmark"></i> Cerrar Sesión</a></li>
-                </ul>
-            </nav>
-            </div>
+            <%@include file="include/menu.jsp" %>
             <div class="col-lg-3 row-content">
                 <div class="content-box">
                     <div class="back">
-                        <button type="submit" class="btn btn-primary backing upload" onclick="location.href='/Sistema_Web/addProductos.jsp'"><i class="fa fa-file-arrow-up"></i> Añadir Producto</button>
+                        <button type="submit" class="btn btn-primary backing upload" onclick="location.href='addProductos.jsp'"><i class="fa fa-file-arrow-up"></i> Añadir Producto</button>
                     </div>
                     <div class="searchform-fields">
                         <input id="txtnom" name="txtnom" placeholder="Busque producto...">

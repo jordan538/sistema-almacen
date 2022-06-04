@@ -5,8 +5,16 @@ JSP
 *F
 + 0 pagProductos.jsp
 pagProductos.jsp
++ 1 cabecera.jsp
+include/cabecera.jsp
++ 2 menu.jsp
+include/menu.jsp
 *L
-1,16:46
-18:64,2
-19,98:66
+1,16:56
+1#1,37:72
+16#0,3:108
+1#2,18:111
+19,2:129,3
+21,10:135
+18#0,66:144
 *E

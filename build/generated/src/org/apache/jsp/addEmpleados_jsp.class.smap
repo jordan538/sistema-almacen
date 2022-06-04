@@ -1,0 +1,20 @@
+SMAP
+addEmpleados_jsp.java
+JSP
+*S JSP
+*F
++ 0 addEmpleados.jsp
+addEmpleados.jsp
++ 1 cabecera.jsp
+include/cabecera.jsp
++ 2 menu.jsp
+include/menu.jsp
+*L
+1,17:57
+20:77,2
+21:79
+1#1,38:80
+21#0,3:117
+1#2,30:120
+23#0,65:149
+*E
