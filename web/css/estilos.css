@@ -68,7 +68,7 @@ nav .nav-list .nav-logo .logo {
 nav .nav-list .nav-logo #nav-toggle {
     display: none;
 }
-nav .btn {
+nav .btna {
     border: none;
     outline: transparent;
     padding: 0.5rem 1rem;
@@ -459,12 +459,12 @@ button.btn.btn-primary.backing.upload {
     padding: 10px 1rem;
 }
 /*SIDEBAR-MENU-2.0*/
-.btn span {
+.btna span {
     color: white;
     font-size: 25px;
     line-height: 35px;
 }
-.btn.click span:before {
+.btna.click span:before {
     content: '\f00d';
 }
 .animated {

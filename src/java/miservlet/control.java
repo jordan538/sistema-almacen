@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.*;
 import dao.Negocio;
-
-
+import dao.DaoCategorias;
 
 public class control extends HttpServlet {
     
     Negocio obj=new Negocio();
+    DaoCategorias objcat=new DaoCategorias();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int op=Integer.parseInt(request.getParameter("opc"));
@@ -22,8 +23,7 @@ public class control extends HttpServlet {
         if(op==2)ConsulProducto(request, response);
         if(op==3)DelProductos(request, response);
         if(op==4)AgrProductos(request, response);
-        if(op==5)ModProducto(request, response);     
-        
+        if(op==5)ModProducto(request, response);      
     }
     
     protected void ListarProductos(HttpServletRequest request, HttpServletResponse response)
@@ -38,26 +38,23 @@ public class control extends HttpServlet {
     protected void AgrProductos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Productos p = new Productos();
-        //p.setCodProd(Integer.parseInt(request.getParameter("cod_prod")));
         p.setDesProd(request.getParameter("nom_prod"));
         p.setStockProd(Integer.parseInt(request.getParameter("stock_prod")));
         p.setUmProd(request.getParameter("pro"));
         p.setFecProd(request.getParameter("date_prod"));
+        p.setCodCat(request.getParameter("cmb_cat"));
+        p.setCodMar(request.getParameter("cmb_mar"));
         obj.AgregarProducto(p);
-        /*String pag = "/pagProductos.jsp";
-        request.getRequestDispatcher(pag).forward(request, response);*/
-        response.getOutputStream().print("<script>window.location.href='pagProductos.jsp';</script>"); 
-        //request.getRequestDispatcher(pag);
+        response.getOutputStream().print("<script>window.location.href='Productos.jsp';</script>"); 
     }
-    
+    //AJAX
     protected void ConsulProducto(HttpServletRequest request, HttpServletResponse response) 
-            throws ServletException, IOException {
-        //int nro=Integer.parseInt(request.getParameter("cod"));
+        throws ServletException, IOException {
         String nro = (request.getParameter("cod"));
-        Productos pre=obj.ConsultaProducto(nro);
-        request.setAttribute("dato", pre);
-        String pag="/modProductos.jsp";
-        request.getRequestDispatcher(pag).forward(request, response);
+        Productos producto = obj.ConsultaProducto(nro);
+        PrintWriter out = response.getWriter();
+        Gson gson = new Gson();
+        out.print(gson.toJson(producto));
     }
     
     protected void ModProducto(HttpServletRequest request, HttpServletResponse response) 
@@ -68,34 +65,16 @@ public class control extends HttpServlet {
         p.setStockProd(Integer.parseInt(request.getParameter("stock_prod")));
         p.setUmProd(request.getParameter("pro"));
         p.setFecProd(request.getParameter("date_prod"));
-        obj.ModificaProducto(p);
-        String pag="/pagProductos.jsp";
-        request.getRequestDispatcher(pag).forward(request, response);
+        obj.ModificaProducto(p);     
     }
+
     
     protected void DelProductos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //int codPro=Integer.parseInt(request.getParameter("cod"));
         String codPro = (request.getParameter("cod"));
         obj.BorrarProducto(codPro);
-        response.getOutputStream().print("<script>window.location.href='pagProductos.jsp';</script>"); 
-        //String pag="/pagProductos.jsp";
-        //request.getRequestDispatcher(pag).forward(request, response);
-
-
-        /*String codCli = request.getParameter("code");
-        
-        request.setAttribute("dato", obj.FacturasPorCliente(codCli));
-        String pag = "/Pregunta02_1.jsp";
-        request.getRequestDispatcher(pag).forward(request, response);*/
+        response.getOutputStream().print("<script>window.location.href='Productos.jsp';</script>"); 
     }
-    /*protected void buscaProductos(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String cod=request.getParameter("consulta");         
-        PrintWriter out = response.getWriter(); 
-        Gson gs=new Gson(); 
-        out.println(gs.toJson(obj.filtraProducto(cod))); 
-    }*/
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

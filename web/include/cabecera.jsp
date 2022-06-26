@@ -24,7 +24,7 @@
                     <li class="nav-link">Sistema de Almacen - <a>Admin</a>
                     </li>   
                     <li class="nav-link">
-                        <button id="sidebar-toggler" class="sidebar-toggle btn">
+                        <button id="sidebar-toggler" class="sidebar-toggle btna">
                         <span class="fas fa-bars"></span>
                         </button>
                     </li> 

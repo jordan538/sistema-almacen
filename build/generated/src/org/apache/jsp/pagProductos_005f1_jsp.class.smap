@@ -1,0 +1,30 @@
+SMAP
+pagProductos_005f1_jsp.java
+JSP
+*S JSP
+*F
++ 0 pagProductos_1.jsp
+pagProductos_1.jsp
++ 1 cabecera.jsp
+include/cabecera.jsp
++ 2 menu.jsp
+include/menu.jsp
+*L
+1,20:59
+21,2:80
+22,2:82
+1#1,37:84
+23#0,3:120
+1#2,18:123
+19,2:141,3
+21,10:147
+25#0,74:156
+99,5:231
+103,10:236
+113,5:247
+117,62:252
+179,5:315
+183,10:320
+193,5:331
+197,252:336
+*E

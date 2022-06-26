@@ -12,6 +12,18 @@
         <servlet-name>controlCat</servlet-name>
         <servlet-class>miservlet.controlCat</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controlMar</servlet-name>
+        <servlet-class>miservlet.controlMar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DaoProductos</servlet-name>
+        <servlet-class>dao.DaoProductos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>controlPro</servlet-name>
+        <servlet-class>miservlet.controlPro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>control</servlet-name>
         <url-pattern>/control</url-pattern>
@@ -23,6 +35,18 @@
     <servlet-mapping>
         <servlet-name>controlCat</servlet-name>
         <url-pattern>/controlCat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlMar</servlet-name>
+        <url-pattern>/controlMar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DaoProductos</servlet-name>
+        <url-pattern>/DaoProductos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlPro</servlet-name>
+        <url-pattern>/controlPro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -6,16 +6,20 @@ public class Productos {
     private int stockProd;
     private String umProd;
     private String fecProd;   
+    private String codCat;
+    private String codMar;
     
     public Productos() {
     }
 
-    public Productos(String codProd, String desProd, int stockProd, String umProd, String fecProd) {
+    public Productos(String codProd, String desProd, int stockProd, String umProd, String fecProd, String codCat, String codMar) {
         this.codProd = codProd;
         this.desProd = desProd;
         this.stockProd = stockProd;
         this.umProd = umProd;
         this.fecProd = fecProd;
+        this.codCat = codCat;
+        this.codMar = codMar;
     }
 
     public String getCodProd() {
@@ -56,6 +60,22 @@ public class Productos {
 
     public void setFecProd(String fecProd) {
         this.fecProd = fecProd;
-    } 
+    }
+
+    public String getCodCat() {
+        return codCat;
+    }
+
+    public void setCodCat(String codCat) {
+        this.codCat = codCat;
+    }
+
+    public String getCodMar() {
+        return codMar;
+    }
+
+    public void setCodMar(String codMar) {
+        this.codMar = codMar;
+    }
     
 }

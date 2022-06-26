@@ -40,37 +40,37 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Nombre:</label>
-                                        <input class="form-control" type="text" name="nomemp" placeholder="Ingrese nombre">
+                                        <input class="form-control" type="text" name="nom_emp" placeholder="Ingrese nombre">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Apellido Paterno:</label>
-                                        <input class="form-control" type="text" name="appemp" placeholder="Ingrese apellido paterno">
+                                        <input class="form-control" type="text" name="pat_emp" placeholder="Ingrese apellido paterno">
                                     </div>
                                 </div> 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Apellido Materno:</label>
-                                        <input class="form-control" type="text" name="apmemp" placeholder="Ingrese apellido materno">
+                                        <input class="form-control" type="text" name="mat_emp" placeholder="Ingrese apellido materno">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">DNI:</label>
-                                        <input class="form-control" type="number" name="dniemp" placeholder="Ingrese DNI">
+                                        <input class="form-control" type="number" name="dni_emp" placeholder="Ingrese DNI">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Telefono:</label>
-                                        <input class="form-control" type="number" name="telfemp" placeholder="Ingrese telefono">
+                                        <input class="form-control" type="number" name="tel_emp" placeholder="Ingrese telefono">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Codigo de area:</label>
-                                        <input class="form-control" type="number" name="codarea" placeholder="Ingrese codigo de area">
+                                        <input class="form-control" type="number" name="cod_area" placeholder="Ingrese codigo de area">
                                     </div>
                                 </div>
                                 <div class="form-group">

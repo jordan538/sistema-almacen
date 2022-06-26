@@ -13,15 +13,15 @@ public class DaoEmpleados {
             PreparedStatement st=cn.prepareStatement(sql); 
             ResultSet rs=st.executeQuery(); 
             while(rs.next()){//leer filaxfila y pasarlo al arraylist 
-            Empleados e=new Empleados(); 
-            e.setCodEmp(rs.getString(1));
-            e.setNomEmp(rs.getString(2));
-            e.setAppEmp(rs.getString(3));
-            e.setApmEmp(rs.getString(4));
-            e.setDniEmp(rs.getString(5));
-            e.setTelfEmp(rs.getString(6));
-            e.setCodArea(rs.getInt(7));
-            lista.add(e); 
+            Empleados p=new Empleados(); 
+            p.setCodEmp(rs.getString(1));
+            p.setNomEmp(rs.getString(2));
+            p.setAppEmp(rs.getString(3));
+            p.setApmEmp(rs.getString(4));
+            p.setDniEmp(rs.getString(5));
+            p.setTelfEmp(rs.getString(6));
+            p.setCodArea(rs.getInt(7));
+            lista.add(p); 
         } 
         }catch(Exception ex){ 
         ex.printStackTrace(); 
@@ -41,15 +41,15 @@ public class DaoEmpleados {
             st.setString(3, id+"%");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                Empleados e = new Empleados();
-                e.setCodEmp(rs.getString(1));
-                e.setNomEmp(rs.getString(2));
-                e.setAppEmp(rs.getString(3));
-                e.setApmEmp(rs.getString(4));
-                e.setDniEmp(rs.getString(5));
-                e.setTelfEmp(rs.getString(6));
-                e.setCodArea(rs.getInt(7));
-                lista.add(e);
+                Empleados p = new Empleados();
+                p.setCodEmp(rs.getString(1));
+                p.setNomEmp(rs.getString(2));
+                p.setAppEmp(rs.getString(3));
+                p.setApmEmp(rs.getString(4));
+                p.setDniEmp(rs.getString(5));
+                p.setTelfEmp(rs.getString(6));
+                p.setCodArea(rs.getInt(7));
+                lista.add(p);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -57,18 +57,18 @@ public class DaoEmpleados {
         return lista;
     }
     
-    public void agrEmpleado(Empleados e) {
+    public void agrEmpleado(Empleados p) {
         Connection cn = MySQLConexion.getConexion();
         try {
             String sql = "{call agrEmpleado(?, ?, ?, ?, ?, ?)}";
             CallableStatement st = cn.prepareCall(sql);
   
-            st.setString(1, e.getNomEmp());
-            st.setString(2, e.getAppEmp());
-            st.setString(3, e.getApmEmp());
-            st.setString(4, e.getDniEmp());
-            st.setString(5, e.getTelfEmp());
-            st.setInt(6, e.getCodArea());
+            st.setString(1, p.getNomEmp());
+            st.setString(2, p.getAppEmp());
+            st.setString(3, p.getApmEmp());
+            st.setString(4, p.getDniEmp());
+            st.setString(5, p.getTelfEmp());
+            st.setInt(6, p.getCodArea());
             st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -76,7 +76,7 @@ public class DaoEmpleados {
     }
     
     public Empleados busEmpleado(String id) {
-        Empleados e = null;
+        Empleados p = null;
         Connection cn = MySQLConexion.getConexion();
         try {
             String sql = "select codemp, nomemp, appemp, apmemp, dniemp, telfemp, codarea from empleado where codemp=?";
@@ -84,33 +84,35 @@ public class DaoEmpleados {
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {//leer cada fila de la tabla
-                e = new Empleados();
-                e.setCodEmp(rs.getString(1));
-                e.setNomEmp(rs.getString(2));
-                e.setAppEmp(rs.getString(3));
-                e.setApmEmp(rs.getString(4));
-                e.setDniEmp(rs.getString(5));
-                e.setTelfEmp(rs.getString(6));
-                e.setCodArea(rs.getInt(7));
+                p = new Empleados();
+                p.setCodEmp(rs.getString(1));
+                p.setNomEmp(rs.getString(2));
+                p.setAppEmp(rs.getString(3));
+                p.setApmEmp(rs.getString(4));
+                p.setDniEmp(rs.getString(5));
+                p.setTelfEmp(rs.getString(6));
+                p.setCodArea(rs.getInt(7));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return e;
+        return p;
     }
     
-    public void actEmpleado(Empleados e) {
+    public void actEmpleado(Empleados p) {
         Connection cn = MySQLConexion.getConexion();
         try {
-            String sql = "{call actEmpleado(?, ?, ?, ?, ?, ?, ?)}";
-            CallableStatement st = cn.prepareCall(sql);
-            st.setString(1, e.getCodEmp());
-            st.setString(2, e.getNomEmp());
-            st.setString(3, e.getAppEmp());
-            st.setString(4, e.getApmEmp());
-            st.setString(5, e.getDniEmp());
-            st.setString(6, e.getTelfEmp());
-            st.setInt(7, e.getCodArea());
+            String sql="update empleado set nomEmp=?, appEmp=?, apmEmp=?, dniEmp=?, telfEmp=?, codArea=? where codEmp=?"; 
+            PreparedStatement st = cn.prepareStatement(sql);
+            //String sql = "{call actEmpleado(?, ?, ?, ?, ?, ?, ?)}";
+            //CallableStatement st = cn.prepareCall(sql);
+            st.setString(7, p.getCodEmp());
+            st.setString(1, p.getNomEmp());
+            st.setString(2, p.getAppEmp());
+            st.setString(3, p.getApmEmp());
+            st.setString(4, p.getDniEmp());
+            st.setString(5, p.getTelfEmp());
+            st.setInt(6, p.getCodArea());
             st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();

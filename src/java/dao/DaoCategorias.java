@@ -9,14 +9,14 @@ public class DaoCategorias {
         List<Categorias>lista=new ArrayList();   
         try{ 
             Connection cn=MySQLConexion.getConexion(); 
-            String sql="select idcat, nombre from categoria";
+            String sql="select codCat, nomCat from categoria";
             PreparedStatement st=cn.prepareStatement(sql); 
             ResultSet rs=st.executeQuery(); 
             while(rs.next()){//leer filaxfila y pasarlo al arraylist 
-            Categorias c=new Categorias(); 
-            c.setCodCat(rs.getString(1));
-            c.setNomCat(rs.getString(2));
-            lista.add(c); 
+            Categorias p=new Categorias(); 
+            p.setCodCat(rs.getString(1));
+            p.setNomCat(rs.getString(2));
+            lista.add(p); 
         } 
         }catch(Exception ex){ 
             ex.printStackTrace(); 
@@ -35,9 +35,9 @@ public class DaoCategorias {
             st.setString(1, id+"%");
             ResultSet rs=st.executeQuery(); 
             while (rs.next()) {
-            Categorias c=new Categorias(); 
-            c.setCodCat(rs.getString(1));
-            c.setNomCat(rs.getString(2));
+            Categorias p=new Categorias(); 
+            p.setCodCat(rs.getString(1));
+            p.setNomCat(rs.getString(2));
             st.executeUpdate();
         } 
         }catch (Exception ex) {
@@ -47,12 +47,12 @@ public class DaoCategorias {
     }
     
     //un metodo para agregar empleados
-    public void agrCategoria(Categorias c) {
+    public void agrCategoria(Categorias p) {
         Connection cn = MySQLConexion.getConexion();
         try {
             String sql = "{call agrCategoria(?)}";
             CallableStatement st = cn.prepareCall(sql);
-            st.setString(1, c.getNomCat());
+            st.setString(1, p.getNomCat());
             st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -61,7 +61,7 @@ public class DaoCategorias {
     
     //unn metodo para buscar empleado
     public Categorias busCategoria(String id) {
-        Categorias c = null;
+        Categorias p = null;
         Connection cn = MySQLConexion.getConexion();
         try {
             String sql = "";
@@ -69,24 +69,24 @@ public class DaoCategorias {
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {//leer cada fila de la tabla
-                c = new Categorias();
-                c.setCodCat(rs.getString(1));
-                c.setNomCat(rs.getString(2));
+                p = new Categorias();
+                p.setCodCat(rs.getString(1));
+                p.setNomCat(rs.getString(2));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return c;
+        return p;
     }
     
     //un metodo para actualizar empleado
-    public void actCategoria(Categorias c) {
+    public void actCategoria(Categorias p) {
         Connection cn = MySQLConexion.getConexion();
         try {
             String sql = "{call actCategoria(?, ?)}";
             CallableStatement st = cn.prepareCall(sql);
-            st.setString(1, c.getCodCat());
-            st.setString(2, c.getNomCat());
+            st.setString(1, p.getCodCat());
+            st.setString(2, p.getNomCat());
             st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();

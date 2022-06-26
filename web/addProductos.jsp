@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="modelo.*" %>
+<%@page import="dao.DaoMarcas" %>
+<%@page import="dao.DaoCategorias" %>
 <%@page import="dao.Negocio" %>
 <%@page import="java.util.*" %>
 <!DOCTYPE html>
@@ -24,8 +26,7 @@
             });
         </script>
         <%
-            /*List<Productos> lista=(ArrayList)request.getAttribute("id");
-            String vianro=(String)request.getAttribute("vianro");*/
+            /*Negocio obj=new Negocio();*/
         %>
         <%@include file="include/cabecera.jsp" %>
         <div id="body" class="sidebar-initial row">
@@ -73,8 +74,37 @@
                                         <input class="form-control" id="datepicker" type="date" name="date_prod">
                                     </div>
                                 </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Categorias:</label>
+                                        <select class="form-control" name="cbe">
+                                            <option selected="selected">Elegir</option>
+                                            <%
+                                                DaoCategorias cat=new DaoCategorias();
+                                                for(Categorias x:cat.lisCategoria()){
+                                                out.print("<option value="+x.getCodCat()+" selected>"+x.getNomCat());
+                                                }
+                                            %>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Marcas:</label>
+                                        <select class="form-control" name="cbe">
+                                            <option selected="selected">Elegir</option>
+                                            <%
+                                                DaoMarcas mar=new DaoMarcas();
+                                                for(Marcas x:mar.lisMarca()){
+                                                out.print("<option value="+x.getCodMar()+" selected>"+x.getNomMar());
+                                                }
+                                            %>                                          
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary save" ><i class="fa fa-floppy-disk"></i> Guardar</button>
+                                    
                                 </div>   
                             </div>
                         </form>                 

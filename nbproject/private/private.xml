@@ -4,11 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/src/java/miservlet/controlEmp.java</file>
-            <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/web/pagCategorias.jsp</file>
-            <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/web/js/animaciones.js</file>
+            <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/web/Productos.jsp</file>
+            <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/src/java/dao/Negocio.java</file>
             <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/src/java/dao/DaoEmpleados.java</file>
-            <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/web/pagEmpleados.jsp</file>
-            <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/web/include/menu.jsp</file>
+            <file>file:/C:/Users/Jordan/Documents/NetBeansProjects/Sistema%20Web/web/Empleados.jsp</file>
         </group>
     </open-files>
 </project-private>

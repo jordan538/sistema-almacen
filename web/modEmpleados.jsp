@@ -29,47 +29,47 @@
                     <div class="container-datos">
                         <form action="controlEmp"> 
                             <div class="row">
-                                <input type="hidden" name="opc" value="5">
+                                <input type="hidden" name="opc" value="5">   
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Codigo:</label>
-                                        <input class="form-control" type="text" name="codemp" value="<%=p.getCodEmp()%>" disabled>
+                                        <input class="form-control" name="cod_emp" value="<%=p.getCodEmp()%>">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Nombre:</label>
-                                        <input class="form-control" type="text" name="nomemp" placeholder="Ingrese nombre" value="<%=p.getNomEmp()%>">
+                                        <input class="form-control" type="text" name="nom_emp" placeholder="Ingrese nombre" value="<%=p.getNomEmp()%>">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Apellido Paterno:</label>
-                                        <input class="form-control" type="text" name="apmemp" placeholder="Ingrese apellido paterno" value="<%=p.getAppEmp()%>">
+                                        <input class="form-control" type="text" name="pat_emp" placeholder="Ingrese apellido paterno" value="<%=p.getAppEmp()%>">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Apellido Materno:</label>
-                                        <input class="form-control" type="text" name="apmemp" placeholder="Ingrese apellido materno" value="<%=p.getApmEmp()%>">
+                                        <input class="form-control" type="text" name="mat_emp" placeholder="Ingrese apellido materno" value="<%=p.getApmEmp()%>">
                                     </div>
                                 </div> 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">DNI:</label>
-                                        <input class="form-control" type="number" name="dniemp" placeholder="Ingrese DNI" value="<%=p.getDniEmp()%>">
+                                        <input class="form-control" type="number" name="dni_emp" placeholder="Ingrese DNI" value="<%=p.getDniEmp()%>">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Telefono:</label>
-                                        <input class="form-control" type="number" name="telfemp" placeholder="Ingrese telefono" value="<%=p.getTelfEmp()%>">
+                                        <input class="form-control" type="number" name="tel_emp" placeholder="Ingrese telefono" value="<%=p.getTelfEmp()%>">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Codigo de area:</label>
-                                        <input class="form-control" type="number" name="codarea" placeholder="Ingrese codigo de area" value="<%=p.getCodArea()%>">
+                                        <input class="form-control" type="number" name="cod_area" placeholder="Ingrese codigo de area" value="<%=p.getCodArea()%>">
                                     </div>
                                 </div>                         
                                 <div class="form-group">

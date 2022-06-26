@@ -35,45 +35,43 @@ public class controlEmp extends HttpServlet {
     protected void AgrEmpleados(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Empleados p = new Empleados();
-        p.setNomEmp(request.getParameter("nomemp"));
-        p.setAppEmp(request.getParameter("appemp"));
-        p.setApmEmp(request.getParameter("apmemp"));
-        p.setDniEmp(request.getParameter("dniemp"));
-        p.setTelfEmp(request.getParameter("telfemp"));
-        p.setCodArea(Integer.parseInt(request.getParameter("codarea")));
+        p.setNomEmp(request.getParameter("nom_emp"));
+        p.setAppEmp(request.getParameter("pat_emp"));
+        p.setApmEmp(request.getParameter("mat_emp"));
+        p.setDniEmp(request.getParameter("dni_emp"));
+        p.setTelfEmp(request.getParameter("tel_emp"));
+        p.setCodArea(Integer.parseInt(request.getParameter("cod_area")));
         obj.agrEmpleado(p);
-        response.getOutputStream().print("<script>window.location.href='pagEmpleados.jsp';</script>"); 
+        response.getOutputStream().print("<script>window.location.href='Empleados.jsp';</script>");
     }
     
     protected void ConsulEmpleados(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         String nro = (request.getParameter("cod"));
-        Empleados pre=obj.busEmpleado(nro);
-        request.setAttribute("dato", pre);
-        String pag="/modEmpleados.jsp";
-        request.getRequestDispatcher(pag).forward(request, response);
+        Empleados empleado = obj.busEmpleado(nro);
+        PrintWriter out = response.getWriter();
+        Gson gson = new Gson();
+        out.print(gson.toJson(empleado));
     }
     
     protected void ModEmpleados(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-        Empleados p=new Empleados();
-        p.setNomEmp(request.getParameter("nomemp"));
-        p.setAppEmp(request.getParameter("appemp"));
-        p.setApmEmp(request.getParameter("apmemp"));
-        p.setDniEmp(request.getParameter("dniemp"));
-        p.setTelfEmp(request.getParameter("telfemp"));
-        p.setCodArea(Integer.parseInt(request.getParameter("codarea")));
+        Empleados p = new Empleados();
+        p.setCodEmp(request.getParameter("cod_emp"));
+        p.setNomEmp(request.getParameter("nom_emp"));
+        p.setAppEmp(request.getParameter("pat_emp"));
+        p.setApmEmp(request.getParameter("mat_emp"));
+        p.setDniEmp(request.getParameter("dni_emp"));
+        p.setTelfEmp(request.getParameter("tel_emp"));
+        p.setCodArea(Integer.parseInt(request.getParameter("cod_area")));
         obj.actEmpleado(p);
-        String pag="/pagEmpleados.jsp";
-        request.getRequestDispatcher(pag).forward(request, response);
     }
     
     protected void DelEmpleados(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String codEmp = (request.getParameter("cod"));
         obj.eliEmpleado(codEmp);
-        String pag="/pagEmpleados.jsp";
-        request.getRequestDispatcher(pag).forward(request, response);
+        response.getOutputStream().print("<script>window.location.href='Empleados.jsp';</script>"); 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

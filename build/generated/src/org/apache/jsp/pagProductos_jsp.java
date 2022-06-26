@@ -95,7 +95,7 @@ public final class pagProductos_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                    <li class=\"nav-link\">Sistema de Almacen - <a>Admin</a>\n");
       out.write("                    </li>   \n");
       out.write("                    <li class=\"nav-link\">\n");
-      out.write("                        <button id=\"sidebar-toggler\" class=\"sidebar-toggle btn\">\n");
+      out.write("                        <button id=\"sidebar-toggler\" class=\"sidebar-toggle btna\">\n");
       out.write("                        <span class=\"fas fa-bars\"></span>\n");
       out.write("                        </button>\n");
       out.write("                    </li> \n");
